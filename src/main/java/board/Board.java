@@ -9,7 +9,7 @@ public class Board {
 	private String boardDate;
 	private String boardContent;
 	private int boardAvailable;
-	private int isNotice;
+//	private int isNotice;
 	
 	
 	// getter & setter
@@ -49,13 +49,13 @@ public class Board {
 	public void setBoardAvailable(int boardAvailable) {
 		this.boardAvailable = boardAvailable;
 	}
-	public int getIsNotice() {
-		return isNotice;
-	}
-	public void setIsNotice(int isNotice) {
-		this.isNotice = isNotice;
-	}
-	
-
-	
+//	public int getIsNotice() {
+//		return isNotice;
+//	}
+//	public void setIsNotice(int isNotice) {
+//		this.isNotice = isNotice;
+//	}
+//	
+//
+//	
 }

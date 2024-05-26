@@ -54,9 +54,12 @@
 	      <label for="floatingPassword">Password</label>
 	    </div>
 	
-	    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-	    <p class="mt-5 mb-3 text-muted">&copy; 2017-2021</p>
+	    <button class="w-100 btn btn-lg btn-primary" type="submit">로그인</button>
+	   
 	  </form>
+      <p></p>
+      <button class="w-100 btn btn-lg btn-primary" type="submit" onclick="location.href='join2.jsp'">회원가입</button>
+      	    <p class="mt-5 mb-3 text-muted">&copy; 2017-2021</p>
 	</main>
 
 

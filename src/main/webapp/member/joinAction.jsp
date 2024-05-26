@@ -21,16 +21,16 @@
 	<%
 		// memberID의 세션값이 존재한다면, memberID를 받아온 세션값으로 설정
 		String memberID = null;
-		if(session.getAttribute("memberID") != null) {
+		if (session.getAttribute("memberID") != null) {
 			memberID = (String) session.getAttribute("memberID");
 		}
 		
 		// memberID가 존재한다면, 다시 가입하지 못하게 main.jsp로 보내기
-		if(memberID != null) {
+		if (memberID != null) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
 			script.println("alert('이미 로그인이 되어있습니다.');");
-			script.println("location.href = 'main.jsp'");
+			script.println("location.href = 'index.jsp'");
 			script.println("</script>");
 		}
 	

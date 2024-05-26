@@ -67,7 +67,7 @@ public class BoardDao {
 	
 	
 	
-	// 작성
+	// 자유게시판 글 작성
 	public int write(String boardTitle, String memberID, String boardContent) {
 		String SQL = "INSERT INTO board VALUES (?, ?, ?, ?, ?, ?)";
 		try {
@@ -87,6 +87,29 @@ public class BoardDao {
 		return -1; // DB오류
 		
 	}
+	
+	
+//	// 공지사항 글 작성
+//	public int writeNotice(String boardTitle, String memberID, String boardContent) {
+//		String SQL = "INSERT INTO board VALUES (?, ?, ?, ?, ?, ?, ?)";
+//		try {
+//			PreparedStatement pstmt = conn.prepareStatement(SQL);
+//			pstmt.setInt(1, getNext());
+//			pstmt.setString(2, boardTitle);
+//			pstmt.setString(3, memberID);
+//			pstmt.setString(4, getDate());
+//			pstmt.setString(5, boardContent);
+//			pstmt.setInt(6, 1);
+//			
+//			return pstmt.executeUpdate();
+//			
+//		} catch (Exception e) { // 첫 번째 게시물인 경우
+//			e.printStackTrace();
+//		}
+//		return -1; // DB오류
+//		
+//	}
+	
 	
 	
 	// 글 목록
@@ -117,6 +140,9 @@ public class BoardDao {
 		return list;
 		
 	}
+	
+	
+	
 	
 	
 	// 페이징처리: 10단위로 끊김 -> 게시글이 10개라면 다음 페이지가 없음.

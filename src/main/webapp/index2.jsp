@@ -81,7 +81,7 @@
 <!-- 가운데 메인메뉴 -->
   <nav class="main-menu">
     <ul>
-      <li><a href="guide.jsp">(이용안내)</a></li>
+      <li><a href="guide.jsp">이용안내</a></li>
       <li><a href="board/notice.jsp">(공지사항)</a></li>
       <li><a href="board/board.jsp">자유게시판</a></li>
       <li><a href="recommend.jsp">(추천도서)</a></li>
