@@ -68,9 +68,9 @@
     <div class="title">
       <h1>책속에서 펼쳐지는 꿈, 순천도서관</h1>
       
-      <form method="post" action="search.jsp">
+      <form method="post" action="allbooks.jsp">
       <div class="input-group mb-3">
-  		<input type="text" class="form-control" placeholder="자료를 검색하세요!" aria-label="Search book" aria-describedby="button-addon2">
+  		<input type="text" name="name" class="form-control" placeholder="자료를 검색하세요!" aria-label="Search book" aria-describedby="button-addon2">
   		<button class="btn btn-outline-secondary" type="submit" id="button-addon2">검색</button>
 	  </div>
 	  </form>
@@ -85,6 +85,7 @@
       <li><a href="board/notice.jsp">(공지사항)</a></li>
       <li><a href="board/board.jsp">자유게시판</a></li>
       <li><a href="recommend.jsp">(추천도서)</a></li>
+      <li><a href="allbooks.jsp">(전체도서)</a></li>
     </ul>
   </nav>
 
