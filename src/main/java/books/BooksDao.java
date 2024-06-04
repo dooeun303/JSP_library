@@ -32,43 +32,29 @@ public class BooksDao {
 	}
 	
 	// 책검색
-	public List listbooks(Books books) {
+	public List<Books> allInfo() {
 		List<Books> booksList = new ArrayList<Books>();
-		String name_1 = books.getBookName();
+		String sql = "";
 		try {
-			String SQL = "select * from books";
+			sql = "select * from books";
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
 			
-			if((name_1 != null && name_1.length() != 0)) {
-				SQL += " where book_name=?";
-				pstmt = conn.prepareStatement(SQL);
-				pstmt.setString(1, name_1);
-			} else {
-				pstmt = conn.prepareStatement(SQL);
+			while(rs.next()) { // rs.next()는 다음값이 존재하는가를 묻는 것임. 값이 있으면 true를 반환하기에 없을때까지 돌 것임.
+				// 고로 전체 멤버빈객체를 구성할 정보 긁어옴
+				Books books = new Books(); // 반복문 돌때마다 새로운 멤버빈객체를 만들어서 추가해야 하기에 안에서 선언
+				books.setBookID(rs.getString("book_id"));
+				books.setBookName(rs.getString("book_name"));
+				books.setBookWriter(rs.getString("book_writer"));
+				books.setBookPublisher(rs.getString("book_publisher"));
+				booksList.add(books);
+
+
 			}
-			ResultSet rs = pstmt.executeQuery();
-            
-			while(rs.next()) {
-                String b1 = rs.getString("book_id");
-                String b2 = rs.getString("book_name");
-                String b3 = rs.getString("book_writer");
-                String b4 = rs.getString("book_publisher");
-                
-            	Books bo = new Books();
-                bo.setBookID(b1);
-                bo.setBookName(b2);
-                bo.setBookWriter(b3);
-                bo.setBookPublisher(b4);
-                
-                booksList.add(bo);
-            }
-			rs.close();
-			pstmt.close();
-			conn.close();
-                
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
+		} 
+		
 		return booksList;
 	}
-	
 }
